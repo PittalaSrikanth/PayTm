@@ -1,14 +1,12 @@
 package companyName.pageLibrary.LoginPage;
 
-import org.openqa.selenium.WebElement;
-import org.testng.Reporter;
-
 import companyName.testBase.TestBase;
+
 
 public class LoginPage extends TestBase{
 
 	public void loginApplication() throws Exception{
-		WebElement username = getElement("gmail.login.username");
+		/*WebElement username = getElement("gmail.login.username");
 	    Reporter.log("entering into application");
 	    username.sendKeys(rep.getProperty("username"));
 	    WebElement next = getElement("gamil.login.next");
@@ -19,37 +17,40 @@ public class LoginPage extends TestBase{
 		password.sendKeys(rep.getProperty("password"));
 		WebElement signup = getElement("gmail.login.signup");
 	    Reporter.log("clicking on signupbutton");
-		signup.click();
+		signup.click();*/
 		
 		
 		
 		
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	}
+}
 

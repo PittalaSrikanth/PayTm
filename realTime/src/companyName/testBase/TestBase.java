@@ -1,193 +1,336 @@
 package companyName.testBase;
 
-import java.io.File;
-import java.io.FileInputStream;
+import io.selendroid.exceptions.NoSuchElementException;
+
 import java.io.IOException;
 import java.util.List;
-import java.util.Properties;
-
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.testng.Reporter;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
+import FileReader.src.ExcelReader.ExcelXlsx;
 
 import companyName.actions.Action;
 
+public class TestBase extends Action {
 
-public class TestBase extends Action{
 	
+	public static void BrowserLanch() throws IOException {
+		ExcelXlsx.Conncetion("browsre.xlsx", "Sheet1");
+		System.out.println(("Selected browser :"+ExcelXlsx.getData("")));
+		selectBrowser(ExcelXlsx.getData(""));
+		implicitWait(30);
+		navigate(ExcelXlsx.getData(""));
+	}
 
-	public static Properties rep = new Properties();
-	public static File F;
-	public static FileInputStream fis;
+	public static WebElement getLocator(String keyWordType,
+			String keyWordtValue) throws Exception {
+
+		if (keyWordType.equalsIgnoreCase("id")) {
+			return driver.findElement(By.id(keyWordtValue));
+		} else if (keyWordType.equalsIgnoreCase("name")) {
+			return driver.findElement(By.name(keyWordtValue));
+		} else if (keyWordType.equalsIgnoreCase("class")) {
+			return driver.findElement(By.className(keyWordtValue));
+		} else if (keyWordType.equalsIgnoreCase("tag")) {
+			return driver.findElement(By.tagName(keyWordtValue));
+		} else if (keyWordType.equalsIgnoreCase("css")) {
+			return driver.findElement(By.cssSelector(keyWordtValue));
+		} else if (keyWordType.equalsIgnoreCase("link")) {
+			return driver.findElement(By.linkText(keyWordtValue));
+		} else if (keyWordType.equalsIgnoreCase("partiallink")) {
+			return driver.findElement(By.partialLinkText(keyWordtValue));
+		} else if (keyWordType.equalsIgnoreCase("xpath")) {
+			return driver.findElement(By.xpath(keyWordtValue));
+		} else
+			throw new Exception("Unknown element loacatorType"
+					+ keyWordtValue);
+	}
+
+	public static List<WebElement> getLocators(String keyWordType,
+			String keyWordValue) throws Exception {
+	
+		if (keyWordType.equalsIgnoreCase("id")) {
+			return driver.findElements(By.id(keyWordValue));
+		} else if (keyWordType.equalsIgnoreCase("name")) {
+			return driver.findElements(By.name(keyWordValue));
+		} else if (keyWordType.equalsIgnoreCase("class")) {
+			return driver.findElements(By.className(keyWordValue));
+		} else if (keyWordType.equalsIgnoreCase("tag")) {
+			return driver.findElements(By.tagName(keyWordValue));
+		} else if (keyWordType.equalsIgnoreCase("css")) {
+			return driver.findElements(By.cssSelector(keyWordValue));
+		} else if (keyWordType.equalsIgnoreCase("link")) {
+			return driver.findElements(By.linkText(keyWordValue));
+		} else if (keyWordType.equalsIgnoreCase("partiallink")) {
+			return driver.findElements(By.partialLinkText(keyWordValue));
+		} else if (keyWordType.equalsIgnoreCase("xpath")) {
+			return driver.findElements(By.xpath(keyWordValue));
+		} else
+			throw new Exception("Unknown element loacatorType"
+					+ keyWordValue);
+	}
+
 	
 	
-	    public static void loadProperitces() throws IOException{
-		F = new File(System.getProperty("user.dir")+"\\src\\companyName\\config\\config.properties");
-		fis = new FileInputStream(F);
-		rep.load(fis);
-		
-		F =new File(System.getProperty("user.dir")+"\\src\\companyName\\pageLocators\\loginpage.properties");
-		fis = new FileInputStream(F);
-		rep.load(fis);
-	    }
-		
-		public static void BrowserLanch() throws IOException{
-			loadProperitces();
-			Reporter.log("Selected browser :" + rep.getProperty("browsre"));
-			selectBrowser(rep.getProperty("browsre"));
-			implicitWait(30);
-			navigate(rep.getProperty("url"));
-		}
-		
-		public static WebElement getLocator(String locator) throws Exception{
-			String[] a = locator.split("_");
-			String locatorType = a[0];
-			String locatorValue = a[1];
-			
-			if(locatorType.toLowerCase().equals("id")){
-				return driver.findElement(By.id(locatorValue));
-			}
-			else if (locatorType.toLowerCase().equals("name")){
-				return driver.findElement(By.name(locatorValue));
-			}
-			else if (locatorType.toLowerCase().equals("classname") ||
-					locatorType.toLowerCase().equals("class")){
-				return driver.findElement(By.className(locatorValue));
-			}
-			else if (locatorType.toLowerCase().equals("tagname") ||
-					locatorType.toLowerCase().equals("tag")){
-				return driver.findElement(By.tagName(locatorValue));
-			}
-			else if (locatorType.toLowerCase().equals("cssselector")||
-					locatorType.toLowerCase().equals("css")){
-				return driver.findElement(By.cssSelector(locatorValue));
-			}
-			else if (locatorType.toLowerCase().equals("linktext") ||
-					locatorType.toLowerCase().equals("link")){
-				return driver.findElement(By.linkText(locatorValue));
-			}
-			else if (locatorType.toLowerCase().equals("partiallinktext")){
-				return driver.findElement(By.partialLinkText(locatorValue));
-			}
-			else if (locatorType.toLowerCase().equals("xpath")){
-				return driver.findElement(By.xpath(locatorValue));
-			}
-			else throw new Exception("Unknown element loacatorType"+locatorType);
-		}
-			
-			public static List<WebElement> getLocators(String locator) throws Exception{
-				String[] a = locator.split("_");
-				String locatorType = a[0];
-				String locatorValue = a[1];
+	public static void selectDropDown(String keywordType, String keywordvalue,String value) throws Exception {
+	
+		try {
+			Select s = new Select(getLocator(keywordType, keywordvalue));
+			s.selectByValue(value);
+		} catch (Exception e) {
+			if(e.getMessage().equals("NoSuchElementException")){
+				System.out.println("Faild to find element :"+ keywordvalue);	
+			}else if (e.getMessage().equals("Timeout"))
 				
-				if(locatorType.toLowerCase().equals("id")){
-					return driver.findElements(By.id(locatorValue));
+				{
+				System.out.println("Timeout to find element"+ keywordvalue);	
 				}
-				else if (locatorType.toLowerCase().equals("name")){
-					return driver.findElements(By.name(locatorValue));
-				}
-				else if (locatorType.toLowerCase().equals("classname") ||
-						locatorType.toLowerCase().equals("class")){
-					return driver.findElements(By.className(locatorValue));
-				}
-				else if (locatorType.toLowerCase().equals("tagname") ||
-						locatorType.toLowerCase().equals("tag")){
-					return driver.findElements(By.tagName(locatorValue));
-				}
-				else if (locatorType.toLowerCase().equals("cssselector")||
-						locatorType.toLowerCase().equals("css")){
-					return driver.findElements(By.cssSelector(locatorValue));
-				}
-				else if (locatorType.toLowerCase().equals("linktext") ||
-						locatorType.toLowerCase().equals("link")){
-					return driver.findElements(By.linkText(locatorValue));
-				}
-				else if (locatorType.toLowerCase().equals("partiallinktext")){
-					return driver.findElements(By.partialLinkText(locatorValue));
-				}
-				else if (locatorType.toLowerCase().equals("xpath")){
-					return driver.findElements(By.xpath(locatorValue));
-				}
-				else throw new Exception("Unknown element loacatorType"+locatorType);
+			}
 		}
+
+	public static void selectDropDown(String keywordType, String keywordvalue, int index) throws Exception {
 		
-public static WebElement getElement(String locator) throws Exception{
-	return getLocator(rep.getProperty(locator));
-}
-public static List<WebElement> getElements(String locator) throws Exception{
-	return getLocators(rep.getProperty(locator));
-}	
-		/*
-		public static WebElement getelement(String locatorType, String locatorValue){
-			switch(locatorType)
-			{
-				case "id":
-					return driver.findElement(By.id(locatorValue));
-				case "classname":
-					return driver.findElement(By.className(locatorValue));
-				case "tagname":
-					return driver.findElement(By.tagName(locatorValue));
-				case "linktext":
-					return driver.findElement(By.linkText(locatorValue));
-				case "partialLinkText":
-					return driver.findElement(By.partialLinkText(locatorValue));
-				case "xpath":
-					return driver.findElement(By.xpath(locatorValue));
-				case "name":
-					return driver.findElement(By.name(locatorValue));
-				case "cssSelector":
-					return driver.findElement(By.cssSelector(locatorValue));
+		try {
+			Select s = new Select(getLocator(keywordType, keywordvalue));
+			s.selectByIndex(index);
+		} catch (Exception e) {
+			if(e.getMessage().equals("NoSuchElementException")){
+				System.out.println("Faild to find element :"+ keywordvalue);	
+			}else if (e.getMessage().equals("Timeout"))
+				
+				{
+				System.out.println("Timeout to find element"+ keywordvalue);	
+				}
 			}
-					return driver.findElement(By.id(locatorValue));
+		}
+
+	public static void actionDropDown(String keywordType, String keywordvalue, String text) throws Exception {
+		try {
+			Actions a = new Actions(driver);
+			a.click(getLocator(keywordType, keywordvalue)).build().perform();
+			a.sendKeys(text).build().perform();
+			a.sendKeys(Keys.ENTER).build().perform();
+		}catch (Exception e) {
+			if(e.getMessage().equals("NoSuchElementException")){
+				System.out.println("Faild to find element :"+ keywordvalue);	
+			}else if (e.getMessage().equals("Timeout"))
+				
+				{
+				System.out.println("Timeout to find element"+ keywordvalue);	
+				}
 			}
-			
-			
-		public static List<WebElement> getelements(String locatorType, String locatorValue){
-			switch(locatorType)
-			{
-				case "id":
-					return driver.findElements(By.id(locatorValue));
-				case "classname":
-					return driver.findElements(By.className(locatorValue));
-				case "tagname":
-					return driver.findElements(By.tagName(locatorValue));
-				case "linktext":
-					return driver.findElements(By.linkText(locatorValue));
-				case "partialLinkText":
-					return driver.findElements(By.partialLinkText(locatorValue));
-				case "xpath":
-					return driver.findElements(By.xpath(locatorValue));
-				case "name":
-					return driver.findElements(By.name(locatorValue));
-				case "cssSelector":
-					return driver.findElements(By.cssSelector(locatorValue));
+		}
+	public static void actionClick(String keywordType, String keywordvalue) throws Exception {
+		try {
+			Actions a = new Actions(driver);
+			a.click(getLocator(keywordType, keywordvalue)).build().perform();
+		} catch (Exception e) {
+			if(e.getMessage().equals("NoSuchElementException")){
+				System.out.println("Faild to find element : :"+ keywordvalue);	
+			}else if (e.getMessage().equals("Timeout"))
+				
+				{
+				System.out.println("Timeout to find element"+ keywordvalue);	
+				}
 			}
-					return driver.findElements(By.id(locatorValue));
+		}
+	public static void actionSendKeys(String keywordType, String keywordvalue, String data) throws Exception {
+		try {
+			Actions a = new Actions(driver);
+			a.click(getLocator(keywordType, keywordvalue)).build().perform();
+			a.sendKeys(data).build().perform();
+		} catch (Exception e) {
+			if(e.getMessage().equals("NoSuchElementException")){
+				System.out.println("Faild to find element :"+ keywordvalue);	
+			}else if (e.getMessage().equals("Timeout"))
+				
+				{
+				System.out.println("Timeout to find element"+ keywordvalue);	
+				}
 			}
-			*/
+		}
+
+	public static void javaScriptClick(String keywordType, String keywordvalue) throws Exception {
+		try {
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("Arguments[0].click();", getLocator(keywordType, keywordvalue));
+		} catch (Exception e) {
+			if(e.getMessage().equals("NoSuchElementException")){
+				System.out.println("Faild to find element :"+ keywordvalue);	
+			}else if (e.getMessage().equals("Timeout"))
+				
+				{
+				System.out.println("Timeout to find element"+ keywordvalue);	
+				}
+			}
+		}
+public static void click(String keywordType, String keywordvalue) throws Exception {
+		
+		try {
+			getLocator(keywordType, keywordvalue).click();
+		}catch (Exception e) {
+			if(e.getMessage().equals("NoSuchElementException")){
+				System.out.println("Faild to find element :"+ keywordvalue);	
+			}else if (e.getMessage().equals("Timeout"))
+				
+				{
+				System.out.println("Timeout to find element"+ keywordvalue);	
+				}
+			}
+		}
+		public static void checkbox(String keywordType, String keywordvalue) throws Exception {
 			
+			try {
+				getLocator(keywordType, keywordvalue).click();
+			}catch (Exception e) {
+				if(e.getMessage().equals("NoSuchElementException")){
+					System.out.println("Faild to find element :"+ keywordvalue);	
+				}else if (e.getMessage().equals("Timeout"))
+					
+					{
+					System.out.println("Timeout to find element"+ keywordvalue);	
+					}
+				}
+			}	
+			public static void link(String keywordType, String keywordvalue) throws Exception  {
+				
+				try {
+					getLocator(keywordType, keywordvalue).click();
+				} catch (Exception e) {
+					if(e.getMessage().equals("NoSuchElementException")){
+						System.out.println("Faild to find element :"+ keywordvalue);	
+					}else if (e.getMessage().equals("Timeout"))
+						
+						{
+						System.out.println("Timeout to find element"+ keywordvalue);	
+						}
+					}
+				}
+				public static void textbox(String keywordType, String keywordvalue, String value) throws Exception {
+					
+					try {
+						getLocator(keywordType, keywordvalue).sendKeys(value);
+					} catch (Exception e) {
+						if(e.getMessage().equals("NoSuchElementException")){
+							System.out.println("Faild to find element :"+ keywordvalue);	
+						}else if (e.getMessage().equals("Timeout"))
+							
+							{
+							System.out.println("Timeout to find element"+ keywordvalue);	
+							}
+						}
+					}
+					public static void toggle(String keywordType, String keywordvalue) throws Exception  {
+						
+						try {
+							getLocator(keywordType, keywordvalue).click();
+						}
+						catch (Exception e) {
+							if(e.getMessage().equals("NoSuchElementException")){
+								System.out.println("Faild to find element :"+ keywordvalue);	
+							}else if (e.getMessage().equals("Timeout"))
+								
+								{
+								System.out.println("Timeout to find element"+ keywordvalue);	
+								}
+							}
+						}
+					
+		
+		
+		
 			
-			
-			
-			
-			
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
