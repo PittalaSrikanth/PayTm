@@ -1,9 +1,12 @@
-package companyName.testBase;
+package mhsi.testBase;
 
 import io.selendroid.exceptions.NoSuchElementException;
 
 import java.io.IOException;
 import java.util.List;
+
+import mhsi.actions.Action;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -12,7 +15,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import FileReader.src.ExcelReader.ExcelXlsx;
 
-import companyName.actions.Action;
 
 public class TestBase extends Action {
 

@@ -1,13 +1,14 @@
-package companyName.testScripts.login;
+package mhsi.testScripts.login;
 
 import java.io.IOException;
+
+import mhsi.pageLibrary.LoginPage.LoginPage;
+import mhsi.testBase.TestBase;
 
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import companyName.pageLibrary.LoginPage.LoginPage;
-import companyName.testBase.TestBase;
 
 public class TestLogin extends TestBase {
 

@@ -8,7 +8,7 @@ count of all writen cells, count of blank cells
 
 
 
-package companyName.excelReader;
+package mhsi.excelReader;
 
 import java.io.File;
 import java.io.FileInputStream;

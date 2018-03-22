@@ -1,4 +1,4 @@
-package companyName.actions;
+package mhsi.actions;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
