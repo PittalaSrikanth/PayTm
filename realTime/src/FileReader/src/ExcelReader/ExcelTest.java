@@ -14,7 +14,7 @@ public static void main(String[] args) throws IOException{
 	/*ExcelXlsx.rowCount();
     ExcelXlsx.coloumCount();*/
 	
-	ExcelXlsx.getData("a1");
+	ExcelXlsx.getData("j10");
 	ExcelXlsx.getData("b1");
 	ExcelXlsx.getData("c1");
 	ExcelXlsx.getData("b2");

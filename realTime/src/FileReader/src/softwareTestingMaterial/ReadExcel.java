@@ -1,4 +1,4 @@
-package softwareTestingMaterial;
+package FileReader.src.softwareTestingMaterial;
  
 import java.io.File;
 import java.io.FileInputStream;
