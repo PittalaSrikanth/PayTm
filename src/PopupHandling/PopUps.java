@@ -29,7 +29,7 @@ public class PopUps extends Action {
 		System.out.println("Alert appeared with the title is:"  + alertTitle);
 		
 		alert.dismiss();
-		Reporter.log("Alert Dismissed");
+		Reporter.log("AlertDismissed");
 	}
 	
 	public static  void alertEnteringText(String inputText)
