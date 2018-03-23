@@ -1,4 +1,4 @@
-package ExcelReader;
+package mhsi.ExcelReader;
 
 import java.io.IOException;
 

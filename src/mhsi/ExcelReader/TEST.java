@@ -1,4 +1,4 @@
-package ExcelReader;
+package mhsi.ExcelReader;
 
 public class TEST {
 
