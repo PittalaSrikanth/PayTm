@@ -22,14 +22,14 @@ public class Listner extends Action implements ITestListener {
 
 	@Override
 	public void onFinish(ITestContext result) {
-		// TODO Auto-generated method stub
+	
 		Action.ExecutionEnd();
 		
 	}
 
 	@Override
 	public void onStart(ITestContext result) {
-		// TODO Auto-generated method stub
+		
 		Action.ExecutionStarts();
 		
 		
@@ -37,7 +37,7 @@ public class Listner extends Action implements ITestListener {
 
 	@Override
 	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
@@ -60,20 +60,20 @@ public class Listner extends Action implements ITestListener {
 
 	@Override
 	public void onTestSkipped(ITestResult result) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
 	@Override
 	public void onTestStart(ITestResult result) {
-		// TODO Auto-generated method stub
+		
 		Action.ExecutionStarts();
 		
 	}
 
 	@Override
 	public void onTestSuccess(ITestResult result) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 	

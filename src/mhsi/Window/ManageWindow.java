@@ -19,7 +19,7 @@ public class ManageWindow extends Action {
 		driver.switchTo().window(ParentTitle);
 	}
 
-	public static void onlyparentAndChild(String ParentTitle, String ChildTitle) {
+	public static void closeAllExceptParentAndChild(String ParentTitle, String ChildTitle) {
 		for (String EachWindow : NoOFWindows) {
 
 			if (!EachWindow.equals(ParentTitle)) {
