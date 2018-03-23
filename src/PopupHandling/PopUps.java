@@ -16,7 +16,7 @@ public class PopUps extends Action {
 		//String alertTitle = driver.switchTo().alert().getText();
 		
 		System.out.println("Alert appeared with the title is:"  + alertTitle);
-		
+		 
 		alert.accept();
 		Reporter.log("Alert Accepted");
 		
