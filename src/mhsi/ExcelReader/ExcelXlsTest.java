@@ -1,8 +1,6 @@
-package ExcelReader;
+package mhsi.ExcelReader;
 
 import java.io.IOException;
-
-import ExcelReader.ExcelXls;
 
 public class ExcelXlsTest {
 	public static void main(String[] args) throws IOException {

@@ -1,4 +1,4 @@
-package ExcelReader;
+package mhsi.ExcelReader;
 
 import java.io.IOException;
 
@@ -7,7 +7,7 @@ public class ExcelTest {
 		ExcelXlsx.Connection("Book123.xlsx", "Sheet1");
 
 		ExcelXlsx.getData("W82");
-		ExcelXlsx.Sheet("Sheet2");
+	//	ExcelXlsx.Sheet("Sheet2");
 		ExcelXlsx.getData("c5");
 
 		ExcelXlsx.closeExcel();

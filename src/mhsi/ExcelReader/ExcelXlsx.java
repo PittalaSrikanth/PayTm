@@ -1,4 +1,4 @@
-package ExcelReader;
+package mhsi.ExcelReader;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -6,14 +6,12 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 import org.apache.poi.ss.usermodel.DataFormatter;
-import org.apache.poi.util.StringUtil;
-import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelXlsx {
 
-	static String path = System.getProperty("user.dir") + "\\src\\testData\\";
+	static String path = System.getProperty("user.dir") + "\\src\\mhsi\\testData\\";
 	static File file;
 	static FileInputStream fis;
 	static XSSFWorkbook wb;
@@ -44,7 +42,7 @@ public class ExcelXlsx {
 		}
 	}
 
-	public static void getData(String cellvalue) {
+	public static String  getData(String cellvalue) {
 
 		String[] a = (cellvalue).split("");
 		if (a.length == 3) {
@@ -55,6 +53,7 @@ public class ExcelXlsx {
 
 		System.out.println(new DataFormatter()
 				.formatCellValue(sheet.getRow(pars).getCell(alphaNumeric.alpha(a[0].toUpperCase()))));
+		return cellvalue;
 
 	}
 

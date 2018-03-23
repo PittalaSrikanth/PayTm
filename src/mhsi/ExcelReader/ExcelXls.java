@@ -1,4 +1,4 @@
-package ExcelReader;
+package mhsi.ExcelReader;
 
 import java.io.File;
 import java.io.FileInputStream;

@@ -1,10 +1,10 @@
 package mhsi.testBase;
 
-import io.selendroid.exceptions.NoSuchElementException;
 
 import java.io.IOException;
 import java.util.List;
 
+import mhsi.ExcelReader.ExcelXlsx;
 import mhsi.actions.Action;
 
 import org.openqa.selenium.By;
@@ -13,18 +13,17 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
-import FileReader.src.ExcelReader.ExcelXlsx;
 
 
 public class TestBase extends Action {
 
 	
 	public static void BrowserLanch() throws IOException {
-		ExcelXlsx.Conncetion("browsre.xlsx", "Sheet1");
-		System.out.println(("Selected browser :"+ExcelXlsx.getData("")));
-		selectBrowser(ExcelXlsx.getData(""));
+		ExcelXlsx.Connection("Configaration.xlsx", "Configaration");
+		System.out.println(("Selected browser :"+ ExcelXlsx.getData("b1")));
+		selectBrowser(ExcelXlsx.getData("b1"));
 		implicitWait(30);
-		navigate(ExcelXlsx.getData(""));
+		navigate(ExcelXlsx.getData("url"));
 	}
 
 	public static WebElement getLocator(String keyWordType,
