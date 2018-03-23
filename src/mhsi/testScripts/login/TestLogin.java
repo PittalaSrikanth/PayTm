@@ -2,7 +2,6 @@ package mhsi.testScripts.login;
 
 import java.io.IOException;
 
-import mhsi.pageLibrary.LoginPage.LoginPage;
 import mhsi.testBase.TestBase;
 
 import org.testng.annotations.AfterTest;
@@ -19,7 +18,7 @@ public class TestLogin extends TestBase {
 
 	@Test
 	public void applanch() throws Exception {
-		new LoginPage().loginApplication();
+		//new LoginPage().loginApplication();
 		mandatoryWait(5);
 
 	}
