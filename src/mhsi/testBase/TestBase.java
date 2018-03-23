@@ -19,9 +19,9 @@ public class TestBase extends Action {
 
 	
 	public static void BrowserLanch() throws IOException {
-		ExcelXlsx.Connection("browsre.xlsx", "Sheet1");
-		System.out.println(("Selected browser :"+ ExcelXlsx.getData("")));
-		selectBrowser(ExcelXlsx.getData(""));
+		ExcelXlsx.Connection("Configaration.xlsx", "Configaration");
+		System.out.println(("Selected browser :"+ ExcelXlsx.getData("b1")));
+		selectBrowser(ExcelXlsx.getData("b1"));
 		implicitWait(30);
 		navigate(ExcelXlsx.getData("url"));
 	}

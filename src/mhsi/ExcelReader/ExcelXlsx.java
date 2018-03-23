@@ -11,7 +11,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelXlsx {
 
-	static String path = System.getProperty("user.dir") + "\\src\\testData\\";
+	static String path = System.getProperty("user.dir") + "\\src\\mhsi\\testData\\";
 	static File file;
 	static FileInputStream fis;
 	static XSSFWorkbook wb;
