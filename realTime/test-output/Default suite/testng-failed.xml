@@ -6,6 +6,7 @@
       <class name="mhsi.testScripts.login.TestLogin">
         <methods>
           <include name="applanch"/>
+          <include name="clsApp"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- mhsi.testScripts.login.TestLogin -->

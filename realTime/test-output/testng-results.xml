@@ -1,59 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testng-results skipped="1" failed="0" total="1" passed="0">
   <reporter-output>
-    <line>
-      <![CDATA[Selected Browser is : firefox]]>
-    </line>
-    <line>
-      <![CDATA[firefox:Browser opend successfully]]>
-    </line>
-    <line>
-      <![CDATA[Maximized firefox:Browser]]>
-    </line>
-    <line>
-      <![CDATA[implicitWait for page loading:30]]>
-    </line>
-    <line>
-      <![CDATA[page loaded compleatly]]>
-    </line>
   </reporter-output>
-  <suite name="Suite" duration-ms="50018" started-at="2018-03-24T11:16:00Z" finished-at="2018-03-24T11:16:50Z">
+  <suite name="Suite" duration-ms="62" started-at="2018-03-25T13:17:52Z" finished-at="2018-03-25T13:17:52Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="50018" started-at="2018-03-24T11:16:00Z" finished-at="2018-03-24T11:16:50Z">
+    <test name="LoginThorughXMl" duration-ms="62" started-at="2018-03-25T13:17:52Z" finished-at="2018-03-25T13:17:52Z">
       <class name="mhsi.testScripts.login.TestLogin">
-        <test-method status="FAIL" signature="setUp()[pri:0, instance:mhsi.testScripts.login.TestLogin@2f6f80]" name="setUp" is-config="true" duration-ms="0" started-at="2018-03-24T16:46:00Z" finished-at="2018-03-24T16:46:00Z">
-          <exception class="org.openqa.selenium.WebDriverException">
-            <message>
-              <![CDATA[Error loading page
-Build info: version: 'unknown', revision: '1969d75', time: '2016-10-18 09:43:45 -0700'
-System info: host: 'srikanth-PC', ip: '192.168.43.227', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_121'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{rotatable=false, raisesAccessibilityExceptions=false, marionette=true, firefoxOptions={args=[], prefs={}}, appBuildId=20160502172042, version=, platform=XP, proxy={}, specificationLevel=1, acceptSslCerts=false, browserVersion=46.0.1, platformVersion=6.1, XULappId={ec8030f7-c20a-464f-9b0e-13a3a9e97384}, browserName=Firefox, takesScreenshot=true, takesElementScreenshot=true, platformName=Windows_NT, device=desktop}]
-Session ID: 25aeb39a-f3c5-4235-9f96-72b656203261]]>
-            </message>
+        <test-method status="FAIL" signature="setUp()[pri:0, instance:mhsi.testScripts.login.TestLogin@1282abb]" name="setUp" is-config="true" duration-ms="0" started-at="2018-03-25T18:47:52Z" finished-at="2018-03-25T18:47:52Z">
+          <exception class="java.lang.ExceptionInInitializerError">
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: Error loading page
-Build info: version: 'unknown', revision: '1969d75', time: '2016-10-18 09:43:45 -0700'
-System info: host: 'srikanth-PC', ip: '192.168.43.227', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_121'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{rotatable=false, raisesAccessibilityExceptions=false, marionette=true, firefoxOptions={args=[], prefs={}}, appBuildId=20160502172042, version=, platform=XP, proxy={}, specificationLevel=1, acceptSslCerts=false, browserVersion=46.0.1, platformVersion=6.1, XULappId={ec8030f7-c20a-464f-9b0e-13a3a9e97384}, browserName=Firefox, takesScreenshot=true, takesElementScreenshot=true, platformName=Windows_NT, device=desktop}]
-Session ID: 25aeb39a-f3c5-4235-9f96-72b656203261
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:127)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:93)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:42)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:163)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
-	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:322)
-	at org.openqa.selenium.remote.RemoteWebDriver$RemoteNavigation.to(RemoteWebDriver.java:902)
-	at mhsi.actions.TestBase.navigate(TestBase.java:118)
-	at mhsi.testBase.Action.BrowserLanch(Action.java:26)
-	at mhsi.testScripts.login.TestLogin.setUp(TestLogin.java:20)
+              <![CDATA[java.lang.ExceptionInInitializerError
+	at mhsi.testScripts.login.TestLogin.setUp(TestLogin.java:19)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -76,36 +34,24 @@ Session ID: 25aeb39a-f3c5-4235-9f96-72b656203261
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
+Caused by: java.lang.NullPointerException
+	at mhsi.testBase.Action.<clinit>(Action.java:22)
+	... 23 more
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          </exception> <!-- java.lang.ExceptionInInitializerError -->
           <reporter-output>
-            <line>
-              <![CDATA[Selected Browser is : firefox]]>
-            </line>
-            <line>
-              <![CDATA[firefox:Browser opend successfully]]>
-            </line>
-            <line>
-              <![CDATA[Maximized firefox:Browser]]>
-            </line>
-            <line>
-              <![CDATA[implicitWait for page loading:30]]>
-            </line>
-            <line>
-              <![CDATA[page loaded compleatly]]>
-            </line>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="SKIP" signature="applanch()[pri:0, instance:mhsi.testScripts.login.TestLogin@2f6f80]" name="applanch" duration-ms="0" started-at="2018-03-24T16:46:50Z" finished-at="2018-03-24T16:46:50Z">
+        <test-method status="SKIP" signature="applanch()[pri:0, instance:mhsi.testScripts.login.TestLogin@1282abb]" name="applanch" duration-ms="2" started-at="2018-03-25T18:47:52Z" finished-at="2018-03-25T18:47:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- applanch -->
-        <test-method status="SKIP" signature="clsApp()[pri:0, instance:mhsi.testScripts.login.TestLogin@2f6f80]" name="clsApp" is-config="true" duration-ms="0" started-at="2018-03-24T16:46:50Z" finished-at="2018-03-24T16:46:50Z">
+        <test-method status="SKIP" signature="clsApp()[pri:0, instance:mhsi.testScripts.login.TestLogin@1282abb]" name="clsApp" is-config="true" duration-ms="0" started-at="2018-03-25T18:47:52Z" finished-at="2018-03-25T18:47:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- clsApp -->
       </class> <!-- mhsi.testScripts.login.TestLogin -->
-    </test> <!-- Test -->
+    </test> <!-- LoginThorughXMl -->
   </suite> <!-- Suite -->
 </testng-results>

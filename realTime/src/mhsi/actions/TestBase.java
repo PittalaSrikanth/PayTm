@@ -20,8 +20,7 @@ public class TestBase {
 		Reporter.log("Selected Browser is : " + browser);
 
 		if (browser.toLowerCase().equals("chrome")) {
-			System.setProperty(
-					"webdriver.chrome.driver",
+			System.setProperty("webdriver.chrome.driver",
 					System.getProperty("user.dir")
 							+ "\\src\\mhsi\\BrowserDrivers\\chromedriver.exe");
 			driver = new ChromeDriver();
@@ -30,8 +29,7 @@ public class TestBase {
 			Reporter.log("Maximized " + browser + ":Browser");
 			return driver;
 		} else if (browser.toLowerCase().equals("firefox")) {
-			System.setProperty(
-					"webdriver.gecko.driver",
+			System.setProperty("webdriver.gecko.driver",
 					System.getProperty("user.dir")
 							+ "\\src\\mhsi\\BrowserDrivers\\geckodriver.exe");
 			driver = new FirefoxDriver();
@@ -93,25 +91,22 @@ public class TestBase {
 		}
 	}
 
-	
 	public static String displayDateTime() {
 		Date d = new Date();
 		SimpleDateFormat s = new SimpleDateFormat("dd-MM-yyyy_HH_mm_ss");
 		return s.format(d);
 	}
 
-	public static void ExecutionStarts() {
+	public static String currentTime() {
 		Date d = new Date();
-		SimpleDateFormat s = new SimpleDateFormat("dd-MM-yyyy_HH_mm_ss");
-		Reporter.log("Execution Started at" + s.format(d));
-		// return s.format(d);
+		SimpleDateFormat s = new SimpleDateFormat("HH:mm:ss");
+		return s.format(d);
 	}
 
-	public static void ExecutionEnd() {
+	public static String currentDate() {
 		Date d = new Date();
-		SimpleDateFormat s = new SimpleDateFormat("dd-MM-yyyy_HH_mm_ss");
-		Reporter.log("Execution Ends at" + s.format(d));
-		// return s.format(d);
+		SimpleDateFormat s = new SimpleDateFormat("dd-MM-yyyy");
+		return s.format(d);
 	}
 
 	public static WebDriver navigate(String url) {
