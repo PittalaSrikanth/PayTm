@@ -17,12 +17,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Reporter;
 
-
 public class Action extends TestBase {
-static Alert alert = driver.switchTo().alert();
-	
-	static String alertTitle = alert.getText();
-	static Set<String> NoOFWindows = driver.getWindowHandles();
 
 	public static void BrowserLanch() throws IOException {
 		ExcelXlsx.Connection("Configaration.xlsx", "Configaration");
@@ -240,74 +235,6 @@ static Alert alert = driver.switchTo().alert();
 					+ keywordvalue + "   :   " + keywordType);
 		}
 
-	}
-	public static void alertBoxAccept()
-	{
-		
-		System.out.println("Alert appeared with the title is:"  + alertTitle);
-		
-		alert.accept();
-		System.out.println("Alert Accepted");
-		Reporter.log("Alert Accepted");
-		
-		
-			
-	}
-	
-	public static void alertBoxDismiss()
-	{
-		System.out.println("Alert appeared with the title is:"  + alertTitle);
-		
-		alert.dismiss();
-		System.out.println("Alert Dismissed");
-		Reporter.log("Alert Dismissed");
-	}
-	
-	public static  void alertEnteringText(String inputText)
-	{
-		System.out.println("Alert appeared with the title is:"  + alertTitle);
-		alert.sendKeys(inputText);
-		System.out.println("Entered the text in the Prompt Popup");
-		Reporter.log("Entered the text in the Prompt Popup");
-		alert.accept();
-	}
-	public static void closeAllChildWindows(String ParentTitle) {
-		for (String EachWindow : NoOFWindows) {
-
-			if (!EachWindow.equals(ParentTitle)) {
-				driver.switchTo().window(EachWindow).close();
-			}
-
-		}
-		driver.switchTo().window(ParentTitle);
-		System.out.println("Closed all child windows");
-	}
-
-	public static void closeAllWindowsExceptParentAndChild(String ParentTitle, String ChildTitle) {
-		for (String EachWindow : NoOFWindows) {
-
-			if (!EachWindow.equals(ParentTitle)) {
-
-				if (EachWindow.equals(ChildTitle)) {
-					continue;
-				}
-				driver.switchTo().window(EachWindow).close();
-			}
-
-		}
-		driver.switchTo().window(ChildTitle);
-		System.out.println("Closed all windows except Parent and Child");
-	}
-
-	public static void navigateToParentWindow(String ParentTitle) {
-		driver.switchTo().window(ParentTitle);
-		System.out.println("Navigated to parentWindow : "+ ParentTitle );
-
-	}
-
-	public static void navigateToChildWindow(String ChildTitle) {
-		driver.switchTo().window(ChildTitle);
-		System.out.println("Navigated to childWindow : "+ ChildTitle);
 	}
 
 }
