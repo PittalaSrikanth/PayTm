@@ -1,12 +1,12 @@
-package mhsi.customeListner;
+package mhsi.CustomeListner;
 
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import mhsi.actions.TestBase;
-import mhsi.testBase.Action;
+import mhsi.Actions.TestBase;
+import mhsi.TestBase.Action;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -27,6 +27,7 @@ public class Listner1 extends TestBase implements ITestListener {
 				+ Action.currentTime() + " Seconds");
 		System.out.println(Result.getName() + ": TestCase started at : "
 				+ Action.currentTime() + " Seconds");
+		System.out.println("*******************************************************************************************");
 
 	}
 
@@ -87,6 +88,7 @@ public class Listner1 extends TestBase implements ITestListener {
 	public void onFinish(ITestContext Result) {
 
 		System.out.println(Result.getName() + " TestCase Ended");
+		System.out.println("*******************************************************************************************");
 		System.out.println("Execution Finished at : " + Result.getEndDate());
 
 	}

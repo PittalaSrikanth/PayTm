@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sun Mar 25 15:34:44 IST 2018</td>
+<td>Started on:</td><td>Sun Mar 25 21:10:33 IST 2018</td>
 </tr>
-<tr><td>Total time:</td><td>118 seconds (118696 ms)</td>
+<tr><td>Total time:</td><td>39 seconds (39427 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,23 +76,21 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='mhsi.testScripts.login.TestLogin.applanch()'><b>applanch</b><br>Test class: mhsi.testScripts.login.TestLogin<br/>
-<a href="#Output-12014861" onClick='toggleBox("Output-12014861", this, "Show output", "Hide output");'>Show output</a>
+<a href="#Output-21225341" onClick='toggleBox("Output-21225341", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-12014861" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-12014861">
+<a href="#Output-21225341" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-21225341">
 implicitWait forGoogle page loading:30<br/>
 Googlepage loaded compleatly<br/>
-<a href="D:\programs\LoacalRepository\realTime\src\mhsi\screenShot\25-03-2018_15-36-43_applanch.png"><img src="file:///D:\programs\LoacalRepository\realTime\src\mhsi\screenShot\25-03-2018_15-36-43_applanch.png" alt=""height='100' width='100'/> <br /><br/>
+<a href="D:\programs\LoacalRepository\realTime\src\mhsi\screenShot\25-03-2018_21-11-13_applanch_Method.png"><img src="file:///D:\programs\LoacalRepository\realTime\src\mhsi\screenShot\25-03-2018_21-11-13_applanch_Method.png" alt=""height='100' width='100'/> <br /><br/>
 </div>
 </td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: Unable to locate element: #identifierId
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+<td><div><pre>org.openqa.selenium.JavascriptException: Error: Permission denied to access property &quot;navigator&quot;
 Build info: version: &apos;unknown&apos;, revision: &apos;1969d75&apos;, time: &apos;2016-10-18 09:43:45 -0700&apos;
 System info: host: &apos;srikanth-PC&apos;, ip: &apos;192.168.43.227&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;x86&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_121&apos;
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
 Capabilities [{rotatable=false, raisesAccessibilityExceptions=false, marionette=true, firefoxOptions={args=[], prefs={}}, appBuildId=20160502172042, version=, platform=XP, proxy={}, specificationLevel=1, acceptSslCerts=false, browserVersion=46.0.1, platformVersion=6.1, XULappId={ec8030f7-c20a-464f-9b0e-13a3a9e97384}, browserName=Firefox, takesScreenshot=true, takesElementScreenshot=true, platformName=Windows_NT, device=desktop}]
-Session ID: ae6f731b-478b-4105-a058-a81d51b7758f
-*** Element info: {Using=css selector, value=#identifierId}
+Session ID: 27469849-5d50-47e7-8a5d-392b2b104e2b
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
@@ -103,12 +101,9 @@ Session ID: ae6f731b-478b-4105-a058-a81d51b7758f
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:163)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:465)
-	at org.openqa.selenium.By$ByCssSelector.findElement(By.java:430)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:360)
-	at mhsi.testBase.Action.getLocator(Action.java:44)
-	at mhsi.testBase.Action.textbox(Action.java:214)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:274)
+	at org.openqa.selenium.remote.RemoteWebElement.isDisplayed(RemoteWebElement.java:315)
+	at mhsi.testBase.Action.textbox(Action.java:219)
 	at mhsi.testScripts.login.TestLogin.applanch(TestLogin.java:29)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
@@ -134,15 +129,13 @@ Session ID: ae6f731b-478b-4105-a058-a81d51b7758f
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
-</pre></div><a href='#' onClick='toggleBox("stack-trace12014861", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace12014861'><pre>org.openqa.selenium.NoSuchElementException: Unable to locate element: #identifierId
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+</pre></div><a href='#' onClick='toggleBox("stack-trace21225341", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace21225341'><pre>org.openqa.selenium.JavascriptException: Error: Permission denied to access property &quot;navigator&quot;
 Build info: version: &apos;unknown&apos;, revision: &apos;1969d75&apos;, time: &apos;2016-10-18 09:43:45 -0700&apos;
 System info: host: &apos;srikanth-PC&apos;, ip: &apos;192.168.43.227&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;x86&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_121&apos;
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
 Capabilities [{rotatable=false, raisesAccessibilityExceptions=false, marionette=true, firefoxOptions={args=[], prefs={}}, appBuildId=20160502172042, version=, platform=XP, proxy={}, specificationLevel=1, acceptSslCerts=false, browserVersion=46.0.1, platformVersion=6.1, XULappId={ec8030f7-c20a-464f-9b0e-13a3a9e97384}, browserName=Firefox, takesScreenshot=true, takesElementScreenshot=true, platformName=Windows_NT, device=desktop}]
-Session ID: ae6f731b-478b-4105-a058-a81d51b7758f
-*** Element info: {Using=css selector, value=#identifierId}
+Session ID: 27469849-5d50-47e7-8a5d-392b2b104e2b
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
@@ -153,12 +146,9 @@ Session ID: ae6f731b-478b-4105-a058-a81d51b7758f
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:163)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:465)
-	at org.openqa.selenium.By$ByCssSelector.findElement(By.java:430)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:360)
-	at mhsi.testBase.Action.getLocator(Action.java:44)
-	at mhsi.testBase.Action.textbox(Action.java:214)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:274)
+	at org.openqa.selenium.remote.RemoteWebElement.isDisplayed(RemoteWebElement.java:315)
+	at mhsi.testBase.Action.textbox(Action.java:219)
 	at mhsi.testScripts.login.TestLogin.applanch(TestLogin.java:29)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
@@ -185,7 +175,7 @@ Session ID: ae6f731b-478b-4105-a058-a81d51b7758f
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
 </pre></div></td>
-<td>30</td>
+<td>9</td>
 <td>mhsi.testScripts.login.TestLogin@1282abb</td></tr>
 </table><p>
 </body>
