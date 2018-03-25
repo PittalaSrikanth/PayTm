@@ -5,8 +5,8 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import mhsi.Actions.TestBase;
-import mhsi.TestBase.Action;
+import mhsi.TestBase.TestBase;
+import mhsi.Actions.Action;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
